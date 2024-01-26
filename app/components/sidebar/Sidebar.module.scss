@@ -1,0 +1,53 @@
+.sidebar_container {
+  padding: 1.25rem;
+  border-right: 1px solid #ebecf2;
+  background: #f7f8fa;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .head_logo {
+    padding: 1rem 0 1.25rem 0.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    align-self: stretch;
+    position: relative;
+
+    li {
+      display: flex;
+      p {
+        display: none;
+        position: absolute;
+        font-size: 0.75rem;
+        right: -5.5rem;
+        width: 5rem;
+        padding-top: 0.65rem;
+      }
+    }
+
+    li.theme {
+      display: flex;
+      padding: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      border-radius: 6.25rem;
+      background: #fff;
+      margin-bottom: 5rem;
+
+      img {
+        padding: 0.41rem;
+        border-radius: 50%;
+        // background-color: red;
+        width: 1.875rem;
+        height: 1.875rem;
+      }
+    }
+  }
+}
