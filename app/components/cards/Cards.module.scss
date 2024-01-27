@@ -8,7 +8,11 @@
   border-radius: 0.875rem;
   border: 1px solid #edf2f7;
   background: #fff;
-  width: 16rem;
+  // width: 16rem;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 
   .top {
     display: flex;
