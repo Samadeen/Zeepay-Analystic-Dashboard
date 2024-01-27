@@ -2,10 +2,20 @@ import { lastOrders } from '@/app/constant/data';
 import styles from './Order.module.scss';
 import Image from 'next/image';
 import view from '@/public/assets/document-download.svg';
+import { useTheme } from '@/app/utils/theme-context';
 
 const Order = () => {
+  const { theme } = useTheme();
+
   return (
-    <section className={styles.order_container}>
+    <section
+      style={
+        theme === 'dark'
+          ? { backgroundColor: '#fff' }
+          : { backgroundColor: '#0f172a' }
+      }
+      className={styles.order_container}
+    >
       <div className={styles.head}>
         <h3>Last Orders</h3>
         <h4>See All</h4>
@@ -19,9 +29,9 @@ const Order = () => {
           <h5>Invoice</h5>
         </div>
         <div className={styles.body_bom}>
-          {lastOrders.map((order) => {
+          {lastOrders.map((order, idx) => {
             return (
-              <div className={styles.whole}>
+              <div className={styles.whole} key={idx}>
                 <div className={styles.name}>
                   <Image src={order.img} alt={`${order.name}`} />
                   <h6>{order.name}</h6>
