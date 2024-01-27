@@ -7,6 +7,10 @@
   top: 0;
   left: 0;
 
+  @media (max-width: 789px) {
+    display: none;
+  }
+
   .head_logo {
     padding: 1rem 0 1.25rem 0.5rem;
   }
@@ -55,13 +59,24 @@
       border-radius: 6.25rem;
       background: #fff;
       margin-bottom: 5rem;
+      transition: all 0.5s ease-in-out;
 
-      img {
-        padding: 0.41rem;
-        border-radius: 50%;
-        width: 1.875rem;
-        height: 1.875rem;
+      svg {
+        width: 2rem;
+        height: 2rem;
       }
+      svg.background {
+        background-color: #34caa5;
+        padding: 0.5rem;
+        border-radius: 50%;
+      }
+
+      // img {
+      //   padding: 0.41rem;
+      //   border-radius: 50%;
+      //   width: 1.875rem;
+      //   height: 1.875rem;
+      // }
     }
   }
 }
