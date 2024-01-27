@@ -67,6 +67,7 @@ export const cards = [
     graph: up_graph,
     trend: trend_up,
     rate: '23.5%',
+    up: true,
   },
   {
     img: d_rotate,
@@ -75,22 +76,25 @@ export const cards = [
     graph: down_graph,
     trend: trend_down,
     rate: '23.5%',
+    up: false,
   },
   {
     img: shopping_cart,
     title: 'Average Sales',
     amount: 1567,
-    graph: up_graph,
-    trend: trend_up,
+    graph: down_graph,
+    trend: trend_down,
     rate: '23.5%',
+    up: false,
   },
   {
     img: coin,
     title: 'Total Income',
     amount: '$350.000',
-    graph: down_graph,
-    trend: trend_down,
+    graph: up_graph,
+    trend: trend_up,
     rate: '23.5%',
+    up: true,
   },
 ];
 
