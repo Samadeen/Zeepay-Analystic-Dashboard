@@ -139,3 +139,42 @@ export const sidebarBottom = [
     tooltip: 'logout',
   },
 ];
+
+export const mobileNav = [
+  {
+    img: dashboard,
+    tooltip: 'dashboard',
+  },
+  {
+    img: stats,
+    tooltip: 'stats',
+  },
+  {
+    img: profile,
+    tooltip: 'profile',
+  },
+  {
+    img: box,
+    tooltip: 'box',
+  },
+  {
+    img: discount,
+    tooltip: 'discount',
+  },
+  {
+    img: info,
+    tooltip: 'info',
+  },
+  {
+    img: arrow_right,
+    tooltip: 'arrow right',
+  },
+  {
+    img: setting,
+    tooltip: 'setting',
+  },
+  {
+    img: logout,
+    tooltip: 'logout',
+  },
+];
