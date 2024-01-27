@@ -6,12 +6,16 @@
   gap: 1.25rem;
   border-radius: 0.5rem;
   background: #fff;
-  width: 33.5rem;
+  width: 70%;
   height: 29rem;
   overflow-y: scroll;
   margin-bottom: 1.25rem;
   border-radius: 0.5rem;
   border: 1px solid #edf2f7;
+
+  @media (max-width: 1230px) {
+    width: 100%;
+  }
 
   &::-webkit-scrollbar {
     width: 3px;
