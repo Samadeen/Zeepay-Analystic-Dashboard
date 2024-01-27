@@ -1,9 +1,19 @@
 import Image from 'next/image';
 import styles from './Cards.module.scss';
+import { useTheme } from '@/app/utils/theme-context';
 
 const Cards = ({ img, graph, title, amount, trend, rate, up }: Card) => {
+  const { theme } = useTheme();
+
   return (
-    <section className={styles.card_container}>
+    <section
+      style={
+        theme === 'dark'
+          ? { backgroundColor: '#fff' }
+          : { backgroundColor: '#0f172a' }
+      }
+      className={styles.card_container}
+    >
       <div className={styles.top}>
         <Image src={img} alt={`${img}`} />
         <Image src={graph} alt={`${graph}`} />
