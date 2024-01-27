@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from './Cards.module.scss';
 import { useTheme } from '@/app/utils/theme-context';
+import { animated, useSpring } from '@react-spring/web';
+import AnimatedNumber from '@/app/utils/AnimatedNumber';
 
 const Cards = ({ img, graph, title, amount, trend, rate, up }: Card) => {
   const { theme } = useTheme();
@@ -21,6 +23,7 @@ const Cards = ({ img, graph, title, amount, trend, rate, up }: Card) => {
       <div className={styles.mid}>
         <h3>{title}</h3>
         <h2>{amount}</h2>
+        {/* <AnimatedNumber value={+amount} /> */}
       </div>
       <div className={styles.bom}>
         <div
