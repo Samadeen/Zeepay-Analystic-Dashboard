@@ -1,0 +1,139 @@
+.platform_container {
+  display: inline-flex;
+  padding: 1rem 1rem 2rem 1.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  width: 33.5rem;
+  height: 29rem;
+  overflow-y: scroll;
+  margin-bottom: 1.25rem;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle styles */
+  &::-webkit-scrollbar-thumb {
+    background: #34caa5;
+    border-radius: 6px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .platform_top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.88rem;
+
+    h3 {
+      color: #26282c;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1.625rem; /* 144.444% */
+    }
+    h4 {
+      color: #34caa5;
+      text-align: center;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.625rem; /* 144.444% */
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .platform_bom {
+    width: 100%;
+    h5 {
+      color: #22242c;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1.625rem; /* 144.444% */
+    }
+
+    .progress_bar {
+      margin: 1.06rem 0 1rem;
+      width: 100%;
+      border-radius: 2.5rem;
+      background: #f5f5f5;
+      height: 0.75rem;
+    }
+
+    p {
+      color: #525252;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.625rem; /* 144.444% */
+      margin-bottom: 1.25rem;
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .book {
+      .progress_bar {
+        .progress {
+          border-radius: 2.5rem;
+          background: #6160dc;
+          height: 100%;
+          width: 60%;
+        }
+      }
+    }
+    .aisle {
+      .progress_bar {
+        .progress {
+          border-radius: 2.5rem;
+          background: #54c5eb;
+          height: 100%;
+          width: 50%;
+        }
+      }
+    }
+    .toy {
+      .progress_bar {
+        .progress {
+          border-radius: 2.5rem;
+          background: #ffb74a;
+          height: 100%;
+          width: 30%;
+        }
+      }
+    }
+    .xstore {
+      .progress_bar {
+        .progress {
+          border-radius: 2.5rem;
+          background: #ff4a55;
+          height: 100%;
+          width: 25%;
+        }
+      }
+    }
+  }
+}
