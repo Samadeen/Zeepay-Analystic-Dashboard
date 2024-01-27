@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './Header.module.scss';
 import search from '@/public/assets/search.svg';
 import calender from '@/public/assets/calender.svg';
@@ -5,10 +7,24 @@ import notification from '@/public/assets/notification.svg';
 import justin from '@/public/assets/justin.svg';
 import arrow from '@/public/assets/arrow-down.svg';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.right}>
         <h1>Dashboard</h1>
         <label htmlFor='search'>
