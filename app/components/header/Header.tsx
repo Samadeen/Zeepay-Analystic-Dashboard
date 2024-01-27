@@ -8,9 +8,11 @@ import justin from '@/public/assets/justin.svg';
 import arrow from '@/public/assets/arrow-down.svg';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useTheme } from '@/app/utils/theme-context';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +26,15 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header
+      className={`${styles.header} ${
+        isScrolled && theme === 'dark'
+          ? styles.scrolled
+          : isScrolled && theme === 'light'
+          ? styles.dark
+          : ''
+      }`}
+    >
       <div className={styles.right}>
         <h1>Dashboard</h1>
         <label htmlFor='search'>
