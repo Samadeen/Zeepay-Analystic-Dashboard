@@ -1,6 +1,7 @@
 'use client';
 import { SetStateAction, useState } from 'react';
 import styles from './Chart.module.scss';
+import { useTheme } from '@/app/utils/theme-context';
 
 const Chart = () => {
   const [show, setShow] = useState(false);
@@ -11,16 +12,25 @@ const Chart = () => {
     setShow(false);
   };
 
+  const { theme } = useTheme();
+
   return (
-    <section className={styles.chart_container}>
+    <section
+      style={
+        theme === 'dark'
+          ? { backgroundColor: '#fff' }
+          : { backgroundColor: '#0f172a' }
+      }
+      className={styles.chart_container}
+    >
       <div className={styles.top}>
         <h3>Sales Trends</h3>
         <div className={styles.sort}>
           <h4>Sort by:</h4>
           <div className={styles.duration}>
-            <h6 onClick={() => setShow((prevState) => !prevState)}>
+            <span onClick={() => setShow((prevState) => !prevState)}>
               {selectedDuration}
-            </h6>
+            </span>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='20'
@@ -35,11 +45,38 @@ const Chart = () => {
               />
             </svg>
             {show && (
-              <div className={styles.duration_modal}>
-                <p onClick={() => handleDurationSelect('Daily')}>Daily</p>
-                <p onClick={() => handleDurationSelect('Weekly')}>Weekly</p>
-                <p onClick={() => handleDurationSelect('Monthly')}>Monthly</p>
-                <p onClick={() => handleDurationSelect('Yearly')}>Yearly</p>
+              <div
+                style={
+                  theme === 'dark'
+                    ? { backgroundColor: '#0f172a' }
+                    : { backgroundColor: '#fff' }
+                }
+                className={styles.duration_modal}
+              >
+                <h6
+                  style={{ color: '#34caa5' }}
+                  onClick={() => handleDurationSelect('Daily')}
+                >
+                  Daily
+                </h6>
+                <h6
+                  style={{ color: '#34caa5' }}
+                  onClick={() => handleDurationSelect('Weekly')}
+                >
+                  Weekly
+                </h6>
+                <h6
+                  style={{ color: '#34caa5' }}
+                  onClick={() => handleDurationSelect('Monthly')}
+                >
+                  Monthly
+                </h6>
+                <h6
+                  style={{ color: '#34caa5' }}
+                  onClick={() => handleDurationSelect('Yearly')}
+                >
+                  Yearly
+                </h6>
               </div>
             )}
           </div>
@@ -56,7 +93,10 @@ const Chart = () => {
           <li>0</li>
         </ul>
         <div className={styles.baring}>
-          <div className={styles.lines}>
+          <div
+            className={styles.lines}
+            // style={theme === 'light' ? { opacity: 0.5 } : { opacity: 1 }}
+          >
             <div className={styles.line}></div>
             <div className={styles.line}></div>
             <div className={styles.line}></div>
@@ -71,7 +111,11 @@ const Chart = () => {
           <div className={styles.char}>
             <div className={`${styles.jan} ${styles.gen}`}>
               <div className={styles.bars}>
-                <div className={styles.bar}></div>
+                <div
+                  className={`${styles.bar} ${
+                    theme === 'light' ? styles.dark : ''
+                  }`}
+                ></div>
                 <div className={styles.tooltip}>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -81,8 +125,8 @@ const Chart = () => {
                     fill='none'
                   >
                     <path
-                      fill-rule='evenodd'
-                      clip-rule='evenodd'
+                      fillRule='evenodd'
+                      clipRule='evenodd'
                       d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                       fill='#090C2C'
                     />
@@ -95,7 +139,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.feb} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -105,8 +153,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -120,7 +168,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.mar} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -130,8 +182,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -145,7 +197,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.apr} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -155,8 +211,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -170,7 +226,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.mei} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -180,8 +240,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -195,7 +255,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.jun} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -205,8 +269,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -220,7 +284,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.jul} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -230,8 +298,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -245,7 +313,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.aug} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -255,8 +327,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -270,7 +342,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.sep} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -280,8 +356,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -295,7 +371,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.okt} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -305,8 +385,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -320,7 +400,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.nov} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -330,8 +414,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
@@ -345,7 +429,11 @@ const Chart = () => {
             <div className={styles.char}>
               <div className={`${styles.des} ${styles.gen}`}>
                 <div className={styles.bars}>
-                  <div className={styles.bar}></div>
+                  <div
+                    className={`${styles.bar} ${
+                      theme === 'light' ? styles.dark : ''
+                    }`}
+                  ></div>
                   <div className={styles.tooltip}>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
@@ -355,8 +443,8 @@ const Chart = () => {
                       fill='none'
                     >
                       <path
-                        fill-rule='evenodd'
-                        clip-rule='evenodd'
+                        fillRule='evenodd'
+                        clipRule='evenodd'
                         d='M0 5C0 2.23858 2.23858 0 5 0H75C77.7614 0 80 2.23858 80 5V21C80 23.7614 77.7614 26 75 26L46 26L40 31.9771L34 26L5 26C2.23858 26 0 23.7614 0 21V5Z'
                         fill='#090C2C'
                       />
