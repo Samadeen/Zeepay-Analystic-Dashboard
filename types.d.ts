@@ -10,8 +10,9 @@ type LastOrder = {
 type Card = {
   img: string;
   title: string;
-  amount: number;
+  amount: string;
   graph: string;
   trend: string;
   rate: string;
+  up: boolean;
 };
