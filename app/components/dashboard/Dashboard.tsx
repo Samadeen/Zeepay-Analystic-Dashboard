@@ -4,10 +4,12 @@ import Chart from '../chart/Chart';
 import Tabs from '../tabs/Tabs';
 import Order from '../orders/Order';
 import Platforms from '../platforms/Platforms';
+import { useTheme } from '@/app/utils/theme-context';
 
 const Dashboard = () => {
+  const { theme } = useTheme();
   return (
-    <div className={styles.dashboard_container}>
+    <div id={theme} className={styles.dashboard_container}>
       <Header />
       <div className={styles.top_content}>
         <Chart />
