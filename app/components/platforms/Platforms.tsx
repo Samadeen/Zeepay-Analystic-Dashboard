@@ -1,8 +1,18 @@
+import { useTheme } from '@/app/utils/theme-context';
 import styles from './Platforms.module.scss';
 
 const Platforms = () => {
+  const { theme } = useTheme();
+
   return (
-    <section className={styles.platform_container}>
+    <section
+      className={styles.platform_container}
+      style={
+        theme === 'dark'
+          ? { backgroundColor: '#fff' }
+          : { backgroundColor: '#0f172a' }
+      }
+    >
       <div className={styles.platform_top}>
         <h3>Top Platform</h3>
         <h4>See All</h4>
