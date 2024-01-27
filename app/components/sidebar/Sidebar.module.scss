@@ -2,7 +2,7 @@
   padding: 1.25rem;
   border-right: 1px solid #ebecf2;
   background: #f7f8fa;
-  //   min-height: 100vh;
+  min-height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -21,13 +21,28 @@
 
     li {
       display: flex;
+      cursor: pointer;
+
+      img {
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          transform: rotate(360deg);
+        }
+      }
       p {
         display: none;
         position: absolute;
         font-size: 0.75rem;
-        right: -5.5rem;
+        right: -5rem;
         width: 5rem;
-        padding-top: 0.65rem;
+        padding: 0.25rem;
+        background-color: rgba(0, 0, 0, 0.723);
+        color: #f7f8fa;
+        z-index: 30;
+        transform: translateY(0.4rem);
+      }
+      &:hover p {
+        display: flex;
       }
     }
 
@@ -44,7 +59,6 @@
       img {
         padding: 0.41rem;
         border-radius: 50%;
-        // background-color: red;
         width: 1.875rem;
         height: 1.875rem;
       }
