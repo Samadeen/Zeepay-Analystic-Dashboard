@@ -1,0 +1,283 @@
+.chart_container {
+  width: 50.375rem;
+  border-radius: 0.875rem;
+  border: 1px solid #edf2f7;
+  background: #fff;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem;
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.34rem;
+
+    h3 {
+      color: #26282c;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 1.625rem; /* 144.444% */
+    }
+
+    .sort {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.63rem;
+
+      h4 {
+        color: #3a3f51;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.375rem; /* 157.143% */
+      }
+
+      .duration {
+        display: flex;
+        padding: 0.375rem 0.75rem;
+        align-items: center;
+        gap: 0.625rem;
+        border-radius: 1.25rem;
+        border: 1px solid #e1dfdf;
+        background: #fff;
+
+        h6 {
+          color: #3a3f51;
+
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 0.75rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1rem; /* 133.333% */
+          cursor: pointer;
+        }
+
+        .duration_modal {
+          position: absolute;
+          background-color: #fff;
+          padding: 1rem 2rem;
+          border-radius: 0.5rem;
+          box-shadow: 6px 6px 16px 6px rgba(52, 202, 165, 0);
+          top: 2.5rem;
+          z-index: 10;
+          left: 3rem;
+
+          p {
+            color: #3a3f51;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1rem; /* 133.333% */
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    // overflow-x: scroll;
+    display: flex;
+    // align-items: flex-end;
+
+    // align-items: ;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+
+      li {
+        list-style: none;
+        color: #525252;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1rem; /* 133.333% */
+        opacity: 0.6;
+      }
+    }
+
+    .baring {
+      position: relative;
+      .lines {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        position: absolute;
+        top: 0;
+        left: 1.9rem;
+        z-index: 10;
+        .line {
+          width: 100%;
+          height: 0.1rem;
+          border: 1.5px dashed #eaeaea;
+        }
+      }
+
+      .char {
+        display: flex;
+        align-items: flex-end;
+        // justify-content: space-between;
+        height: 19rem;
+        width: 100%;
+        margin-left: 2rem;
+
+        .gen {
+          position: relative;
+          z-index: 10;
+
+          p {
+            color: #525252;
+            text-align: center;
+            margin-top: 0.85rem;
+            /* Body Text/Plus Jakarta Sans/SemiBold/14 */
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.375rem; /* 157.143% */
+            opacity: 0.6;
+          }
+          .bars {
+            position: absolute;
+            bottom: 80%;
+            .bar {
+              width: 1.875rem;
+              background-color: #34caa51a;
+              border-top-right-radius: 1.25rem;
+              border-top-left-radius: 1.25rem;
+              transition: all 0.5s ease-in-out;
+              cursor: pointer;
+
+              &:hover {
+                background: linear-gradient(
+                  180deg,
+                  #34caa5 0%,
+                  rgba(52, 202, 165, 0) 100%
+                );
+              }
+            }
+            .tooltip {
+              position: absolute;
+              bottom: 105%;
+              left: -25px;
+              display: none;
+
+              p {
+                position: absolute;
+                transition: all 0.5s ease;
+                color: #fff;
+                font-family: Inter;
+                font-size: 0.75rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                bottom: 35%;
+                left: 20%;
+                opacity: 1;
+              }
+            }
+
+            &:hover .tooltip {
+              display: flex;
+            }
+          }
+        }
+
+        .jan {
+          .bars {
+            .bar {
+              height: 4.5rem;
+            }
+          }
+        }
+        .feb {
+          .bars {
+            .bar {
+              height: 8.75rem;
+            }
+          }
+        }
+        .mar {
+          .bars {
+            .bar {
+              height: 2.75rem;
+            }
+          }
+        }
+        .apr {
+          .bars {
+            .bar {
+              height: 11.5rem;
+            }
+          }
+        }
+        .mei {
+          .bars {
+            .bar {
+              height: 6rem;
+            }
+          }
+        }
+        .jun {
+          .bars {
+            .bar {
+              height: 15.25rem;
+            }
+          }
+        }
+        .jul {
+          .bars {
+            .bar {
+              height: 6.25rem;
+            }
+          }
+        }
+        .aug {
+          .bars {
+            .bar {
+              height: 9.25rem;
+            }
+          }
+        }
+        .sep {
+          .bars {
+            .bar {
+              height: 12.25rem;
+            }
+          }
+        }
+        .okt {
+          .bars {
+            .bar {
+              height: 3.5rem;
+            }
+          }
+        }
+        .nov {
+          .bars {
+            .bar {
+              height: 11.5rem;
+            }
+          }
+        }
+        .des {
+          .bars {
+            .bar {
+              height: 10.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
