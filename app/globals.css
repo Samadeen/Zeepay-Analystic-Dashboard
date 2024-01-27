@@ -3,14 +3,41 @@
 @tailwind utilities;
 
 body {
-  background: #fafafa;
   max-width: 100vw;
+}
+
+#light {
+  background-color: #0f172a;
+}
+
+#dark {
+  background: #fafafa;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+#dark h1,
+#dark span {
+  color: #000;
+}
+
+#light h1,
+#light h2,
+#light h3,
+#light h4,
+#light h5,
+#light h6,
+#light p,
+#light li,
+#light small {
+  color: #fff;
+}
+#light span {
+  color: #000;
 }
 
 @layer utilities {
