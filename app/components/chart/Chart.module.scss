@@ -46,7 +46,7 @@
         border: 1px solid #e1dfdf;
         background: #fff;
 
-        h6 {
+        span {
           color: #3a3f51;
 
           font-family: 'Plus Jakarta Sans', sans-serif;
@@ -64,18 +64,19 @@
           border-radius: 0.5rem;
           box-shadow: 6px 6px 16px 6px rgba(52, 202, 165, 0);
           top: 2.5rem;
-          z-index: 10;
+          z-index: 50;
           left: 3rem;
 
-          p {
-            color: #3a3f51;
+          h6 {
+            color: #34caa5;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.9rem;
             font-style: normal;
             font-weight: 400;
             line-height: 1rem; /* 133.333% */
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             cursor: pointer;
+            // padding: 0.5rem;
           }
         }
       }
@@ -164,6 +165,18 @@
                   #34caa5 0%,
                   rgba(52, 202, 165, 0) 100%
                 );
+              }
+
+              &.dark {
+                background-color: #ed534e3e;
+
+                &:hover {
+                  background: linear-gradient(
+                    180deg,
+                    #ed544e 0%,
+                    rgba(52, 202, 165, 0) 100%
+                  );
+                }
               }
             }
             .tooltip {
